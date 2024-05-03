@@ -4,6 +4,7 @@ import {
   Text,
   SafeAreaView,
   StatusBar,
+  Platform,
 } from 'react-native';
 import React, {useState} from 'react';
 import {styles} from '../styles/noteScreen.style';
@@ -19,8 +20,9 @@ const NoteScreen = () => {
     <SafeAreaView style={styles.container}>
       {/* STATUS BAR */}
       <StatusBar
+        translucent
         backgroundColor={Colors.primaryColor}
-        barStyle={'light-content'}
+        barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
       />
 
       {/* HEADER */}
